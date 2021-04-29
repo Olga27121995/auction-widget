@@ -1,21 +1,20 @@
-const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin').CleanWebpackPlugin;
-const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const HtmlLoader = require('html-loader');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
+const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: "./src/main.ts",
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle-[hash].js',
+    path: path.resolve(__dirname, "dist"),
+    filename: "bundle-[hash].js",
   },
   resolve: {
-    extensions: ['.ts', '.tsx', '.js'],
+    extensions: [".ts", ".tsx", ".js"],
   },
   devServer: {
-    contentBase: 'dist',
+    contentBase: "dist",
     compress: true,
     port: 3000,
   },
@@ -23,33 +22,27 @@ module.exports = {
     rules: [
       {
         test: /\.tsx?$/,
-        loader: 'ts-loader',
+        loader: "ts-loader",
       },
       {
         test: /\.(sa|sc|c)ss$/,
+        exclude: /node_modules/,
         use: [
+          "sass-to-string",
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {},
+            loader: "sass-loader",
+            options: {
+              sassOptions: {
+                outputStyle: "compressed",
+              },
+            },
           },
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
         ],
       },
       {
         test: /\.html$/,
-        loader: 'html-loader',
-        // use: [
-        //   {
-        //     loader: 'html-loader',
-        //     // options: {
-        //     //   minimize: true,
-        //     //   interpolation: false
-        //     // }
-        //   }
-        // ]
-      }
+        loader: "html-loader",
+      },
       // {
       //   test: /\.(svg|woff|woff2|ttf|eot|otf)([\?]?.*)$/,
       //   use: [
@@ -65,15 +58,15 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: '**/*',
-          context: path.resolve(__dirname, 'src', 'assets'),
-          to: './assets',
+          from: "**/*",
+          context: path.resolve(__dirname, "src", "assets"),
+          to: "./assets",
         },
       ],
     }),
     new HtmlWebpackPlugin({
-      template: 'src/index.html',
-      filename: 'index.html',
+      template: "src/index.html",
+      filename: "index.html",
       minify: {
         collapseWhitespace: true,
         removeComments: true,
@@ -82,7 +75,7 @@ module.exports = {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: 'style-[hash].css',
+      filename: "style-[hash].css",
     }),
   ],
 };

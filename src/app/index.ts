@@ -1,11 +1,2 @@
-import index from './index.html';
-
-class HelloWorld extends HTMLElement {
-
-    connectedCallback() {
-        this.innerHTML = index;
-    }
-
-}
-
-customElements.define('hello-world', HelloWorld);
+import Table from './components/table/table';
+new Table();
