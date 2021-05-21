@@ -1,0 +1,80 @@
+.multiselect-label {
+  position: absolute;
+  font-size: 11px;
+  color: rgba(0,0,0,.54);
+  left: 11px;
+  top: 3px;
+}
+
+.multiselect {
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  padding-left: 7px;
+  background: transparent;
+  border: none;
+  border-right: 10px solid transparent;
+}
+
+.multiselect-options {
+  position: absolute;
+  top: 44px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 5px rgb(0 0 0 / 12%);
+  border-radius: 4px;
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all ease-in-out 0.2s;
+  z-index: 23;
+}
+
+.multiselect-option {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: all ease-in-out 0.2s;
+
+  &:hover {
+    background: #efefef;
+    cursor: pointer;
+  }
+}
+
+.multiselect-checkbox {
+  margin-right: 8px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 22;
+  background: rgba(255, 255, 255, 0.3);
+  display: none;
+}
+
+.active {
+  .overlay {
+    display: block;
+  }
+
+  .multiselect-options {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.pick-values {
+  position: relative;
+  left: 4px;
+  top: 8px;
+  font-size: 14px;
+}
