@@ -28,4 +28,7 @@ npm run build:prod
 ```
 <script defer="defer" src="cislink-auction-widget.js"></script>
 ```
-В необходимом месте в проекте, где должен будет распологаться виджет, добавьте тег <b><auction-table></auction-table></b>
+В необходимом месте в проекте, где должен будет распологаться виджет, добавьте тег
+```
+<auction-table></auction-table>
+```
