@@ -1,71 +1,31 @@
-# Webpack ts starter
+<h1 align="center">CISLINK AUCTION WIDGET</h1>
 
-Starter for development typescript application with webpack. [Russian](./docs/ru.md)
+## Документация
 
-## Clone starter
+Для работы с виджетом необходимо скачать проект
 
-To get started, you should run command:
-
-```shell script
-git clone git@github.com:Fafnur/webpack-ts-starter.git project
 ```
-
-## Install dependencies
-
-After clone project, you should install dependencies:
-
-```shell script
-yarn install
+git clone https://github.com/CislinkEtp/auction-widget.git
 ```
-
-## Development
-
-For development, you can use the command that runs webpack dev server:
-
-```shell script
-yarn run serve
+Установить пакеты, выполнив команду: 
 ```
-
-## Build 
-
-For build your application, run command:
-
-```shell script
-yarn run build
+npm i
 ```
-
-For build your application on production, run command:
-
-```shell script
-yarn run build:prod
+Открыть фаил 
 ```
-
-After buld, 3 files will be generated in the dist folder:
-
-- index.html
-- bundle.js
-- style.css
-
-The `assets` folder, which will contain all the necessary files.
-
-## Add libraries
-
-For add libraries you can use command:
-
-```shell script
-yarn add <lib-name>
-``` 
-
-## Add polyfills
-
-For add polyfills you can use [core-js](https://github.com/zloirock/core-js):
-
-```shell script
-yarn add core-js
-``` 
-
-IE10 and IE11 requires the following for NgClass support on SVG elements
-
-```shell script
-yarn add classlist.js
-``` 
+src/app/configs/config.ts
+```
+Вставить в поле clientId свой ключ вида <b>4sssf755-999c-4181-9c80-74cc40187ace</b> и перезаписать фаил.
+<br>
+Для сборки проекта выполнить команду:
+```
+npm run build:prod
+```
+После сборки проекта в папке dist у вас появится фаил
+<b>cislink-auction-widget.js</b>
+<br>
+Скопируйте данный фаил в свой проект и добавьте ссылку на страницу где должен быть виджет:
+```
+<script defer="defer" src="cislink-auction-widget.js"></script>
+```
+В необходимом месте в проекте, где должен будет распологаться виджет, добавьте тег <b><auction-table></auction-table></b>

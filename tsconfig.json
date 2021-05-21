@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
     "target": "es2015",
-    "module": "commonjs",
+    "module": "esnext",
     "lib": [
       "es2017",
       "dom"
     ],
-    "declaration": true,
-    "sourceMap": true,
+    "declaration": false,
+    "sourceMap": false,
     "outDir": "./dist",
     "strict": true,
     "moduleResolution": "node",
@@ -17,7 +17,11 @@
     ],
     "esModuleInterop": true,
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
+    "emitDecoratorMetadata": true,
+    "skipDefaultLibCheck": true,
+    "skipLibCheck": true,
+    "noImplicitAny": false,
+    "allowSyntheticDefaultImports": true
   },
   "exclude": [
     "node_modules"

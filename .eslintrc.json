@@ -13,8 +13,7 @@
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:prettier/recommended"
+    "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
   "ignorePatterns": ["**/*"],
   "plugins": ["@typescript-eslint", "prettier", "simple-import-sort", "import", "prefer-arrow", "jsdoc"],
@@ -30,7 +29,6 @@
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "prettier/@typescript-eslint",
         "plugin:import/errors",
         "plugin:import/warnings",
         "plugin:import/typescript"
@@ -200,7 +198,6 @@
         "operator-linebreak": "off",
         "padded-blocks": "off",
         "prefer-const": "error",
-        "prettier/prettier": "error",
         "quote-props": "off",
         "quotes": ["error", "single"],
         "radix": "error",
@@ -284,22 +281,6 @@
             "format": ["PascalCase"]
           }
         ],
-        "@angular-eslint/component-selector": [
-          "error",
-          {
-            "type": "element",
-            "prefix": "app",
-            "style": "kebab-case"
-          }
-        ],
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
         "import/prefer-default-export": "off",
         "@typescript-eslint/lines-between-class-members": [
           "error",
@@ -315,7 +296,7 @@
           }
         ],
         "@typescript-eslint/explicit-function-return-type": ["error"],
-        "@typescript-eslint/no-explicit-any": ["error"],
+        "@typescript-eslint/no-explicit-any": ["warn"],
         "import/no-extraneous-dependencies": ["warn"],
         "@typescript-eslint/member-ordering": [
           "error",
