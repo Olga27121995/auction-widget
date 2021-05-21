@@ -1,0 +1,60 @@
+.paginator {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-top: -1px;
+  border: 1px solid #e2e2e2;
+  padding: 10px;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.paginator-label, .count {
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.paginator-select {
+  border: 1px solid #c5c2c2;
+  margin-left: 5px;
+  padding: 3px;
+  min-width: 50px;
+  border-radius: 4px;
+}
+
+.page-size, .count {
+  margin-right: 20px;
+}
+
+.paginator-icon {
+  height: 24px;
+  width: 24px;
+  fill: currentColor;
+}
+
+.arrows {
+  display: flex;
+}
+
+.btn-arrow {
+  background: transparent;
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  transition: all ease-in-out 0.2s;
+  height: 36px;
+  width: 36px;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+
+  &:not(:disabled):hover {
+    cursor: pointer;
+    background: #e2e2e2;
+  }
+}
+
+.logo {
+  margin-right: auto;
+}
